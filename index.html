@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>StopShop</title>
+</head>
+<body>
+      <div class="topbar">
+    <div class="container">
+      <div class="left">Free shipping on orders over $75 • Easy returns</div>
+      <div class="right"><span>Secure Checkout</span><span>Support 24/7</span></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">StopShop</div>
+      </div>
+
+      <div class="nav-group">
+        <nav>
+          <a href="#home" data-route="home">Home</a>
+          <a href="#mens" data-route="mens">Mens</a>
+          <a href="#womens" data-route="womens">Womens</a>
+          <a href="#products" data-route="products">Products</a>
+          <a href="#contact" data-route="contact">Contact</a>
+        </nav>
+
+        <div class="search" title="Search filters product grids (demo)">
+          <span class="icon">⌕</span>
+          <input id="searchInput" type="text" placeholder="Search products (demo)" />
+        </div>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+            <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="M4.93 4.93l1.41 1.41"></path>
+              <path d="M17.66 17.66l1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="M4.93 19.07l1.41-1.41"></path>
+              <path d="M17.66 6.34l1.41-1.41"></path>
+            </svg>
+          </button>
+
+          <button class="cart-btn" id="openCart" type="button" aria-label="Open cart">
+            Cart <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOME PAGE -->
+  <div class="page active" id="pageHome">
+    <section class="hero">
+      <div class="hero-mark"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge">Clean UI • Portfolio Template</div>
+        <h1>StopShop — a clean storefront template that looks legitimate.</h1>
+        <p>
+          Full product grids, professional layout, cart drawer, separate pages, and a theme toggle.
+          All products have working image links.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#products" data-route="products">Shop All</a>
+          <a class="btn btn-dark" href="#mens" data-route="mens">Mens Collection</a>
+          <a class="btn btn-dark" href="#womens" data-route="womens">Womens Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="feature-strip">
+      <div class="container">
+        <div class="features">
+          <div class="feature"><div class="dot"></div><div><h4>Fast Delivery</h4><p>Homepage structure like a real store.</p></div></div>
+          <div class="feature"><div class="dot"></div><div><h4>Easy Returns</h4><p>Clean product card hierarchy.</p></div></div>
+          <div class="feature"><div class="dot"></div><div><h4>Secure Checkout</h4><p>Cart drawer + checkout CTA.</p></div></div>
+          <div class="feature"><div class="dot"></div><div><h4>Light/Dark</h4><p>Theme saved locally.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="muted">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Picks</h2>
+          <div class="hint">A real-store style featured section.</div>
+        </div>
+        <div class="grid product-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- MENS PAGE -->
+  <div class="page" id="pageMens">
+    <div class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <h1>Mens</h1>
+          <p>12 items • Each includes a working image link.</p>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="grid product-grid" id="mensGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WOMENS PAGE -->
+  <div class="page" id="pageWomens">
+    <div class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <h1>Womens</h1>
+          <p>12 items • Each includes a working image link.</p>
+        </div>
+      </div>
+    </div>
+    <section class="muted">
+      <div class="container">
+        <div class="grid product-grid" id="womensGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRODUCTS PAGE -->
+  <div class="page" id="pageProducts">
+    <div class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <h1>All Products</h1>
+          <p>Mens + Womens combined. Search input filters what you see.</p>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="grid product-grid" id="allProductsGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div class="page" id="pageContact">
+    <div class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <h1>Contact</h1>
+          <p>Dedicated contact page with a professional form layout.</p>
+        </div>
+      </div>
+    </div>
+    <section class="muted">
+      <div class="container">
+        <div class="panel">
+          <h3>Send a message</h3>
+          <p>Demo form.</p>
+
+          <form class="form" id="contactForm">
+            <div class="row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic" required>
+                  <option value="">Select a topic</option>
+                  <option value="order">Order question</option>
+                  <option value="product">Product question</option>
+                  <option value="returns">Returns</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="order">Order # </label>
+                <input id="order" name="order" type="text" placeholder="e.g. SS-10021" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button class="submit" type="submit">Send Message</button>
+            <div class="form-note">Template UI only. No email is actually sent until you connect a service.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> StopShop
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close" id="cartClose">Close</button>
+    </div>
+    <div class="drawer-body" id="cartBody">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="drawer-footer">
+      <div class="total-row">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout" id="checkoutBtn">Checkout</button>
+      <div class="fineprint">Demo only. No real orders are placed.</div>
+    </div>
+  </aside>
+    <script src="script.js"></script>
+
+</body>
+</html>
