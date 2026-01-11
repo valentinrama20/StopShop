@@ -47,3 +47,24 @@ function renderGrids(filterText=""){
   document.getElementById("allProductsGrid").innerHTML = list.map(productCard).join("");
 }
 
+function addToCart(id){
+  const item = cart.find(i => i.id === id);
+  if(item) item.qty += 1;
+  else cart.push({ id, qty: 1 });
+  renderCart();
+}
+function incQty(id){
+  const item = cart.find(i => i.id === id);
+  if(item){ item.qty += 1; renderCart(); }
+}
+function decQty(id){
+  const item = cart.find(i => i.id === id);
+  if(!item) return;
+  item.qty -= 1;
+  if(item.qty <= 0) cart = cart.filter(i => i.id !== id);
+  renderCart();
+}
+function removeItem(id){
+  cart = cart.filter(i => i.id !== id);
+  renderCart();
+}
