@@ -68,3 +68,13 @@ function removeItem(id){
   cart = cart.filter(i => i.id !== id);
   renderCart();
 }
+
+function renderCart(){
+  document.getElementById("cartCount").textContent = String(cartCount());
+  document.getElementById("cartTotal").textContent = money(cartTotal());
+
+  const body = document.getElementById("cartBody");
+  if(cart.length === 0){
+    body.innerHTML = `<p class="cart-empty">Your cart is empty.</p>`;
+    return;
+  }
