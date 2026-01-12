@@ -70,11 +70,43 @@ function removeItem(id){
 }
 
 function renderCart(){
-  document.getElementById("cartCount").textContent = String(cartCount());
+  document.getElementById("cartCount").textContent = cartCount();
   document.getElementById("cartTotal").textContent = money(cartTotal());
 
   const body = document.getElementById("cartBody");
-  if(cart.length === 0){
+  if(!cart.length){
     body.innerHTML = `<p class="cart-empty">Your cart is empty.</p>`;
     return;
   }
+
+  body.innerHTML = cart.map(i=>{
+    const p = getProduct(i.id);
+    return `
+      <div class="cart-row">
+        <div>
+          <div class="cart-name">${p.name}</div>
+          <div class="cart-meta">${money(p.price)} × ${i.qty}</div>
+        </div>
+        <button class="remove" data-remove="${p.id}">remove</button>
+      </div>
+    `;
+  }).join("");
+}
+
+document.addEventListener("click", e=>{
+  const add = e.target.closest("[data-add]");
+  if(add) addToCart(+add.dataset.add);
+
+  const rem = e.target.closest("[data-remove]");
+  if(rem){
+    cart = cart.filter(i=>i.id !== +rem.dataset.remove);
+    renderCart();
+  }
+});
+
+document.getElementById("searchInput")
+  .addEventListener("input", e=>renderGrids(e.target.value));
+
+document.getElementById("year").textContent = new Date().getFullYear();
+renderGrids();
+renderCart();
